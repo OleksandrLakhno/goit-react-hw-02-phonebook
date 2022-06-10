@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import shortid from "shortid";
-import Section from "components/Section";
+// import Section from "components/Section";
 import FormContact from "components/FormContact";
 import ContactList from "components/ContactList";
 import Filter from "components/Filter/Filter";
@@ -51,14 +51,16 @@ class App extends Component {
       contact => contact.name.toLowerCase().includes(normalizeFilter)||contact.number.toLowerCase().includes(normalizeFilter));
     return (
       <div>
-        <Section title='Phonebook'>
+        {/* <Section title='Phonebook'> */}
+        <h1>Phonebook</h1>
           <FormContact onSubmit={this.addContact}/>
-      </Section>
+      {/* </Section> */}
 
-        <Section title='Contacts'>
+        {/* <Section title='Contacts'> */}
+        <h2>Contacts</h2>
           <Filter value={this.state.filter} changeFilter={this.changeFilter}/>
           <ContactList options={filtred} onDeleteContactItem={ this.deleteContaktItem}/>
-      </Section>
+      {/* </Section> */}
       </div>
     )
   }
